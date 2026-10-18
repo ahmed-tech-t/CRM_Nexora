@@ -1,0 +1,41 @@
+---
+description: TDD-first feature work with logic, UI, and e2e tests covering edge cases
+alwaysApply: true
+---
+
+# TDD: three test layers before feature code
+
+Before implementing any new feature or behavior change, write failing tests first (red → green → refactor). Do not ship production code without the three layers below.
+
+## Order of work
+
+1. List acceptance criteria + **all edge cases** (null/blank, empty lists, loading/error/success, offline, permission denied, RTL/LTR, invalid phone/input, race/double-tap, config change).
+2. Write **TDD test cases as text** (Given / When / Then) for every case.
+3. Implement failing tests for each layer, then minimal code to pass.
+4. Refactor only after green.
+
+## Three required layers
+
+| Layer | What it proves | Where (Android) |
+|-------|----------------|-----------------|
+| **Logic** | Domain/ViewModel/utils pure behavior, state transitions, Resource mapping | `app/src/test/...` (JUnit) |
+| **UI** | Compose renders states, intents fire, empty/loading/error/content | Compose UI tests (`androidTest` or Robolectric as project uses) |
+| **E2E** | Critical user path across screens/API/navigation | Instrumented e2e under `androidTest` |
+
+Skip a layer only if the change cannot touch that surface (say which layer and why in one line).
+
+## Edge cases (minimum checklist)
+
+- Happy path
+- Empty / blank / null inputs
+- Validation failures
+- Loading → Success and Loading → Error
+- Retry after error
+- Concurrent / double submit
+- Boundary values (min/max length, zero, negative)
+
+## Hard stops
+
+- Do **not** write feature implementation before logic tests exist and fail for the right reason.
+- Do **not** mark done until logic + UI + e2e covering the listed edge cases are green (or explicitly deferred with reason).
+- Prefer one focused test per edge case over giant mega-tests.
