@@ -25,17 +25,11 @@ fun MainShellScreen(
     val tabNavController = rememberNavController()
     val navBackStackEntry by tabNavController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
-    val selectedTabId = when {
-        currentDestination?.hierarchy?.any { it.hasRoute(AppRoute.Stats::class) } == true ->
-            AppRoute.tabId(AppRoute.Stats)
-        currentDestination?.hierarchy?.any { it.hasRoute(AppRoute.Visits::class) } == true ->
-            AppRoute.tabId(AppRoute.Visits)
-        currentDestination?.hierarchy?.any { it.hasRoute(AppRoute.Plan::class) } == true ->
-            AppRoute.tabId(AppRoute.Plan)
-        currentDestination?.hierarchy?.any { it.hasRoute(AppRoute.Custody::class) } == true ->
-            AppRoute.tabId(AppRoute.Custody)
-        else -> AppRoute.tabId(AppRoute.Home)
-    }
+    val selectedTabId = AppRoute.tabId(
+        AppRoute.tabRoutes.firstOrNull { route ->
+            currentDestination?.hierarchy?.any { it.hasRoute(route::class) } == true
+        } ?: AppRoute.Home,
+    )
 
     MainShell(
         modifier = modifier,

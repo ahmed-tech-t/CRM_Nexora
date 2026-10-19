@@ -25,6 +25,7 @@ import com.example.crm_nexora.ui.components.primitives.NexoraText
 import com.example.crm_nexora.ui.theme.CRM_NexoraTheme
 import com.example.crm_nexora.ui.theme.NexoraDimens
 import com.example.crm_nexora.ui.theme.NexoraPrimary
+import com.example.crm_nexora.ui.theme.NexoraSurfaceFocus
 import com.example.crm_nexora.ui.theme.NexoraTextMuted
 
 data class BottomNavItem(
@@ -72,6 +73,8 @@ fun BottomNavBar(
                     selectedTextColor = NexoraPrimary,
                     unselectedIconColor = NexoraTextMuted,
                     unselectedTextColor = NexoraTextMuted,
+                    indicatorColor = NexoraSurfaceFocus,
+
                 ),
             )
         }

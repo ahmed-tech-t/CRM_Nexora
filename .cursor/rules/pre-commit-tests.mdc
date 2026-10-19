@@ -1,0 +1,15 @@
+---
+description: Always run tests before committing or pushing
+alwaysApply: true
+---
+
+# Pre-commit / pre-push: run tests first
+
+Before any `git commit` or `git push` requested by the user:
+
+1. Run the relevant automated tests for the changed code (prefer unit/logic tests under `app/src/test`; run UI/e2e when those surfaces changed).
+2. Default command when unsure: `./gradlew testDebugUnitTest` (or the project’s equivalent).
+3. **Do not commit** if tests fail. Fix failures first, then re-run until green.
+4. Mention in the reply which test command ran and that it passed (or why a layer was skipped in one line).
+
+Never skip this step because the change “looks small.”
