@@ -9,6 +9,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.crm_nexora.R
 import com.example.crm_nexora.domain.utils.UiEvent
+import com.example.crm_nexora.navigation.AppRoute
 import com.example.crm_nexora.ui.screens.home.main.HomeScreen
 
 fun NavGraphBuilder.mainTabNav(
@@ -17,7 +18,7 @@ fun NavGraphBuilder.mainTabNav(
     onNavigate: (UiEvent.Navigate) -> Unit,
     navigationUp: () -> Unit,
 ) {
-    composable(AppRoute.Home.path) {
+    composable<AppRoute.Home> {
         HomeScreen(
             modifier = Modifier.padding(innerPadding),
             snackbarHostState = snackbarHostState,
@@ -25,25 +26,25 @@ fun NavGraphBuilder.mainTabNav(
             navigationUp = navigationUp,
         )
     }
-    composable(AppRoute.Stats.path) {
+    composable<AppRoute.Stats> {
         PlaceholderScreen(
             title = stringResource(R.string.nav_stats),
             modifier = Modifier.padding(innerPadding),
         )
     }
-    composable(AppRoute.Visits.path) {
+    composable<AppRoute.Visits> {
         PlaceholderScreen(
             title = stringResource(R.string.nav_visits),
             modifier = Modifier.padding(innerPadding),
         )
     }
-    composable(AppRoute.Plan.path) {
+    composable<AppRoute.Plan> {
         PlaceholderScreen(
             title = stringResource(R.string.nav_plan),
             modifier = Modifier.padding(innerPadding),
         )
     }
-    composable(AppRoute.Custody.path) {
+    composable<AppRoute.Custody> {
         PlaceholderScreen(
             title = stringResource(R.string.nav_custody),
             modifier = Modifier.padding(innerPadding),

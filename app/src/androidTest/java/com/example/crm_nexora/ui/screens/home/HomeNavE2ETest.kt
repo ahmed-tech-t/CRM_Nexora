@@ -47,4 +47,15 @@ class HomeNavE2ETest {
         composeRule.onNodeWithContentDescription(menuCd).performClick()
         composeRule.onNodeWithText(planning).assertIsDisplayed()
     }
+
+    @Test
+    fun mainActivity_infoCenterOpensDataCenter() {
+        val menuCd = composeRule.activity.getString(R.string.cd_menu)
+        val infoCenter = composeRule.activity.getString(R.string.drawer_info_center)
+        val dataCenterTitle = composeRule.activity.getString(R.string.data_center_title)
+
+        composeRule.onNodeWithContentDescription(menuCd).performClick()
+        composeRule.onNodeWithText(infoCenter).performClick()
+        composeRule.onNodeWithText(dataCenterTitle).assertIsDisplayed()
+    }
 }

@@ -87,4 +87,18 @@
     <string name="drawer_copyright">© 2026 All rights reserved to Nexora Software Solutions</string>
     <string name="drawer_app_version_format">App version : %1$s</string>
     <string name="drawer_app_version_default">1.1.0</string>
+
+    <!-- Data center -->
+    <string name="data_center_title">Data center &amp; sync</string>
+    <string name="data_center_intro_title">Database update (Offline Sync)</string>
+    <string name="data_center_intro_body">Sync doctor data and plans so the app works smoothly while offline.</string>
+    <string name="data_center_section_server">Main server data</string>
+    <string name="data_center_card_full_title">Full data update</string>
+    <string name="data_center_card_full_subtitle">Download and update all records and plans at once</string>
+    <string name="data_center_card_doctors_title">Doctor lists &amp; registration</string>
+    <string name="data_center_card_doctors_subtitle">Update doctor classes, specialties, and regions</string>
+    <string name="data_center_card_clinics_title">Clinics &amp; hospitals</string>
+    <string name="data_center_card_clinics_subtitle">Medical centers, pharmacies, and contact data</string>
+    <string name="data_center_card_planned_title">Planned visits</string>
+    <string name="data_center_card_planned_subtitle">Scheduled visit tables for the current cycle and notes</string>
 </resources>

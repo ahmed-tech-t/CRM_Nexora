@@ -4,6 +4,7 @@ import com.example.crm_nexora.domain.models.AttendanceStatus
 import com.example.crm_nexora.domain.utils.UiEvent
 import com.example.crm_nexora.ui.preview.HomeSamples
 import com.example.crm_nexora.ui.components.chrome.nav_drawer.NavDrawerItem
+import com.example.crm_nexora.navigation.AppRoute
 import com.example.crm_nexora.ui.screens.home.main.HomeEvents
 import com.example.crm_nexora.ui.screens.home.main.HomeViewModel
 import kotlinx.coroutines.Dispatchers
@@ -90,5 +91,20 @@ class HomeViewModelTest {
 
         assertFalse(vm.state.value.isDrawerOpen)
         assertTrue(snackBar.await() is UiEvent.ShowSnackBar)
+    }
+
+    @Test
+    fun onDrawerItem_infoCenter_navigatesToDataCenter() = runTest(UnconfinedTestDispatcher()) {
+        val vm = HomeViewModel()
+        val nav = async {
+            vm.uiEvent.first { it is UiEvent.Navigate }
+        }
+
+        vm.onEvent(HomeEvents.OnMenuClick)
+        vm.onEvent(HomeEvents.OnDrawerItem(NavDrawerItem.InfoCenter))
+
+        assertFalse(vm.state.value.isDrawerOpen)
+        val event = nav.await() as UiEvent.Navigate
+        assertEquals(AppRoute.DataCenter, event.destination)
     }
 }

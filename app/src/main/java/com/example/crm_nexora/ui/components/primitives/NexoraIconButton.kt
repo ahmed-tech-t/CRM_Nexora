@@ -1,5 +1,7 @@
 package com.example.crm_nexora.ui.components.primitives
 
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.IconButton
@@ -9,6 +11,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.crm_nexora.ui.theme.CRM_NexoraTheme
@@ -39,6 +43,31 @@ fun NexoraIconButton(
     }
 }
 
+
+@Composable
+fun NexoraIconButton(
+    painter: Painter,
+    contentDescription: String?,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    shape: Shape = CircleShape,
+    tint: Color = LocalContentColor.current,
+) {
+    IconButton(
+        onClick = onClick,
+        modifier = modifier,
+        enabled = enabled,
+        shape = shape ,
+        colors = IconButtonDefaults.iconButtonColors(contentColor = tint),
+    ) {
+        NexoraIcon(
+            painter = painter,
+            contentDescription = contentDescription,
+            tint = tint,
+        )
+    }
+}
 /** Text-label icon button (e.g. + / − steppers) — still controlled by parent. */
 @Composable
 fun NexoraIconButton(

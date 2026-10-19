@@ -87,4 +87,18 @@
     <string name="drawer_copyright">© 2026 جميع حقوق الملكية محفوظة لدى شركة نيكسورا للحلول البرمجية</string>
     <string name="drawer_app_version_format">App version : %1$s</string>
     <string name="drawer_app_version_default">1.1.0</string>
+
+    <!-- Data center -->
+    <string name="data_center_title">مركز البيانات والمزامنة</string>
+    <string name="data_center_intro_title">تحديث قواعد البيانات (Offline Sync)</string>
+    <string name="data_center_intro_body">قم بمزامنة بيانات الأطباء والخطط لضمان عمل التطبيق بكفاءة وبدون انقطاع أثناء عدم توفر الإنترنت.</string>
+    <string name="data_center_section_server">بيانات السيرفر الرئيسية</string>
+    <string name="data_center_card_full_title">تحديث شامل للبيانات</string>
+    <string name="data_center_card_full_subtitle">تحميل وتحديث كافة السجلات والخطط دفعة واحدة</string>
+    <string name="data_center_card_doctors_title">قوائم الأطباء والتسجيل</string>
+    <string name="data_center_card_doctors_subtitle">تحديث تصنيفات الأطباء، التخصصات، والمناطق</string>
+    <string name="data_center_card_clinics_title">العيادات والمستشفيات</string>
+    <string name="data_center_card_clinics_subtitle">سجلات المراكز الطبية، الصيدليات وبيانات التواصل</string>
+    <string name="data_center_card_planned_title">الزيارات المخطط لها</string>
+    <string name="data_center_card_planned_subtitle">جداول الزيارات المجدولة للدورة الحالية والملاحظات</string>
 </resources>

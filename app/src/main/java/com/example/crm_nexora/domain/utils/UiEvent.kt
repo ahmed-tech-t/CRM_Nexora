@@ -1,7 +1,9 @@
 package com.example.crm_nexora.domain.utils
 
+import com.example.crm_nexora.navigation.AppRoute
+
 sealed class UiEvent {
-    data class Navigate(val route: String) : UiEvent()
+    data class Navigate(val destination: AppRoute) : UiEvent()
     data class NavigateGraph(
         val route: String,
         val authStartDestination: String? = null,

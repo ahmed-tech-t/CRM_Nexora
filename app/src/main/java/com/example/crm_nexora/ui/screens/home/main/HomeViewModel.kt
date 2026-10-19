@@ -4,7 +4,9 @@ import com.example.crm_nexora.R
 import com.example.crm_nexora.domain.utils.UiEvent
 import com.example.crm_nexora.domain.utils.UiText
 import com.example.crm_nexora.ui.common.BaseViewModel
+import com.example.crm_nexora.ui.components.chrome.nav_drawer.NavDrawerItem
 import com.example.crm_nexora.ui.mapper.toUi
+import com.example.crm_nexora.navigation.AppRoute
 import com.example.crm_nexora.ui.preview.HomeSamples
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -29,7 +31,16 @@ class HomeViewModel @Inject constructor() : BaseViewModel() {
             }
             is HomeEvents.OnDrawerItem -> {
                 _state.update { it.copy(isDrawerOpen = false) }
-                sendUiEvent(UiEvent.ShowSnackBar(UiText.StringResource(R.string.placeholder_coming_soon)))
+                when (event.item) {
+                    NavDrawerItem.InfoCenter -> {
+                        sendUiEvent(UiEvent.Navigate(AppRoute.DataCenter))
+                    }
+                    else -> {
+                        sendUiEvent(
+                            UiEvent.ShowSnackBar(UiText.StringResource(R.string.placeholder_coming_soon)),
+                        )
+                    }
+                }
             }
             HomeEvents.OnStartShift,
             HomeEvents.OnEndShift,

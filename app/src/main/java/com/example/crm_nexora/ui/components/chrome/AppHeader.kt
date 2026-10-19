@@ -12,13 +12,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -56,7 +57,7 @@ fun AppHeader(
         Row(verticalAlignment = Alignment.CenterVertically) {
             if (showBack) {
                 NexoraIconButton(
-                    imageVector = Icons.Default.ArrowBack,
+                    painter = painterResource(R.drawable.ic_back_arrow),
                     contentDescription = stringResource(R.string.cd_back),
                     onClick = { onBack?.invoke() },
                     tint = contentColor,
@@ -95,33 +96,12 @@ fun AppHeader(
     }
 }
 
-@Composable
-fun BrandMark(
-    text: String = "Rx",
-    modifier: Modifier = Modifier,
-) {
-    Box(
-        modifier = modifier
-            .size(80.dp)
-            .background(NexoraPrimary, RoundedCornerShape(NexoraDimens.radiusXl)),
-        contentAlignment = Alignment.Center,
-    ) {
-        NexoraText(
-            text = text,
-            style = MaterialTheme.typography.headlineLarge,
-            color = Color.White,
-        )
-    }
-}
-
 @Preview(showBackground = true, locale = "ar")
 @Composable
 private fun AppHeaderPreview() {
     CRM_NexoraTheme {
         Column {
             AppHeader(title = "حجز زيارة", subtitle = "الخطوة 1", showBack = true, onBack = {})
-            Spacer(Modifier.height(8.dp))
-            BrandMark()
         }
     }
 }
