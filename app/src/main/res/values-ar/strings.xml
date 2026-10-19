@@ -56,7 +56,7 @@
 
     <!-- Bottom nav -->
     <string name="nav_home">الرئيسية</string>
-    <string name="nav_stats">الإحصائيات</string>
+    <string name="nav_statics">الإحصائيات</string>
     <string name="nav_visits">الزيارات</string>
     <string name="nav_plan">تخطيط لزيارة</string>
     <string name="nav_custody">العهدة</string>
@@ -101,4 +101,23 @@
     <string name="data_center_card_clinics_subtitle">سجلات المراكز الطبية، الصيدليات وبيانات التواصل</string>
     <string name="data_center_card_planned_title">الزيارات المخطط لها</string>
     <string name="data_center_card_planned_subtitle">جداول الزيارات المجدولة للدورة الحالية والملاحظات</string>
+
+    <!-- Statics -->
+    <string name="statics_title">لوحة الإحصائيات والتقارير</string>
+    <string name="statics_section_visits">إحصائيات الزيارات والخطط</string>
+    <string name="statics_metric_today">زيارات اليوم</string>
+    <string name="statics_metric_completed">الزيارات المنتهية</string>
+    <string name="statics_metric_unplanned">الزيارات الغير مخطط لها</string>
+    <string name="statics_section_custody">ملخص عهدة المندوب (الأدوية والهدايا)</string>
+    <string name="statics_custody_samples_title">عينات الأدوية والمنتجات</string>
+    <string name="statics_custody_gifts_title">الهدايا الدعائية</string>
+    <string name="statics_custody_samples_received_format">المستلم: %1$d عبوة (%2$d أصناف)</string>
+    <string name="statics_custody_gifts_received_format">المستلم: %1$d قطعة (%2$d أصناف)</string>
+    <string name="statics_custody_remaining_format">متبقي: %1$d</string>
+    <string name="statics_custody_dispatched_format">منصرف: %1$d</string>
+    <string name="statics_section_accounts">توزيع الاكونتات الموجوده حسب الفئة</string>
+    <string name="statics_account_clinic">عيادة</string>
+    <string name="statics_account_pharmacy">صيدلية</string>
+    <string name="statics_account_hospital">مستشفى</string>
+    <string name="statics_account_health_unit">وحدات صحيه</string>
 </resources>

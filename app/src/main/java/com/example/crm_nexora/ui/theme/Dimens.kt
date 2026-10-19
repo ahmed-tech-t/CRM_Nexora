@@ -6,8 +6,11 @@ object NexoraDimens {
     val spaceXxs = 4.dp
     val spaceXs = 6.dp
     val spaceSm = 8.dp
+    val space10 = 10.dp
     val spaceMd = 12.dp
+    val spaceSection = 14.dp
     val spaceLg = 16.dp
+    val spaceMetricRows = 20.dp
     val spaceXl = 24.dp
 
     val radiusSm = 4.dp
@@ -17,6 +20,7 @@ object NexoraDimens {
 
     val borderThin = 1.dp
     val borderFocus = 2.dp
+    val elevationCard = 2.dp
 
     val buttonMinHeight = 47.dp
     val buttonCompactHeight = 36.dp
@@ -26,4 +30,6 @@ object NexoraDimens {
     val bottomNavHeight = 64.dp
     val headerHeight = 96.dp
     val statusDot = 8.dp
+    val iconStaticsWidth = 12.dp
+    val iconStaticsHeight = 16.dp
 }

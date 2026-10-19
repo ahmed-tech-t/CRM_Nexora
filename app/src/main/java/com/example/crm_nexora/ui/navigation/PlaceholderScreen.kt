@@ -32,6 +32,6 @@ fun PlaceholderScreen(
 @Composable
 private fun PlaceholderScreenPreview() {
     CRM_NexoraTheme {
-        PlaceholderScreen(title = stringResource(R.string.nav_stats))
+        PlaceholderScreen(title = stringResource(R.string.nav_statics))
     }
 }

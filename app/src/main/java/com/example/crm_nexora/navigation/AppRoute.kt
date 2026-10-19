@@ -15,7 +15,7 @@ sealed interface AppRoute {
     data object Home : AppRoute
 
     @Serializable
-    data object Stats : AppRoute
+    data object Statics : AppRoute
 
     @Serializable
     data object Visits : AppRoute
@@ -30,11 +30,11 @@ sealed interface AppRoute {
     data object DataCenter : AppRoute
 
     companion object {
-        val tabRoutes: List<AppRoute> = listOf(Home, Stats, Visits, Plan, Custody)
+        val tabRoutes: List<AppRoute> = listOf(Home, Statics, Visits, Plan, Custody)
 
         fun fromTabId(tabId: String): AppRoute = when (tabId) {
             "home" -> Home
-            "stats" -> Stats
+            "statics" -> Statics
             "visits" -> Visits
             "plan" -> Plan
             "custody" -> Custody
@@ -43,7 +43,7 @@ sealed interface AppRoute {
 
         fun tabId(route: AppRoute): String = when (route) {
             Home -> "home"
-            Stats -> "stats"
+            Statics -> "statics"
             Visits -> "visits"
             Plan -> "plan"
             Custody -> "custody"

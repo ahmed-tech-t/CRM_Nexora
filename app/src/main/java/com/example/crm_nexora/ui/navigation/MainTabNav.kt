@@ -11,6 +11,7 @@ import com.example.crm_nexora.R
 import com.example.crm_nexora.domain.utils.UiEvent
 import com.example.crm_nexora.navigation.AppRoute
 import com.example.crm_nexora.ui.screens.home.main.HomeScreen
+import com.example.crm_nexora.ui.screens.statics.main.StaticsScreen
 
 fun NavGraphBuilder.mainTabNav(
     innerPadding: PaddingValues,
@@ -26,10 +27,12 @@ fun NavGraphBuilder.mainTabNav(
             navigationUp = navigationUp,
         )
     }
-    composable<AppRoute.Stats> {
-        PlaceholderScreen(
-            title = stringResource(R.string.nav_stats),
+    composable<AppRoute.Statics> {
+        StaticsScreen(
             modifier = Modifier.padding(innerPadding),
+            snackbarHostState = snackbarHostState,
+            onNavigate = onNavigate,
+            navigationUp = navigationUp,
         )
     }
     composable<AppRoute.Visits> {

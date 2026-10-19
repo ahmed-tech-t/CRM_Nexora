@@ -58,4 +58,13 @@ class HomeNavE2ETest {
         composeRule.onNodeWithText(infoCenter).performClick()
         composeRule.onNodeWithText(dataCenterTitle).assertIsDisplayed()
     }
+
+    @Test
+    fun mainActivity_staticsTab_showsStaticsTitle() {
+        val staticsTab = composeRule.activity.getString(R.string.nav_statics)
+        val staticsTitle = composeRule.activity.getString(R.string.statics_title)
+
+        composeRule.onNodeWithText(staticsTab).performClick()
+        composeRule.onNodeWithText(staticsTitle).assertIsDisplayed()
+    }
 }

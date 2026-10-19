@@ -56,7 +56,7 @@
 
     <!-- Bottom nav -->
     <string name="nav_home">Home</string>
-    <string name="nav_stats">Statistics</string>
+    <string name="nav_statics">Statistics</string>
     <string name="nav_visits">Visits</string>
     <string name="nav_plan">Plan visit</string>
     <string name="nav_custody">Custody</string>
@@ -101,4 +101,23 @@
     <string name="data_center_card_clinics_subtitle">Medical centers, pharmacies, and contact data</string>
     <string name="data_center_card_planned_title">Planned visits</string>
     <string name="data_center_card_planned_subtitle">Scheduled visit tables for the current cycle and notes</string>
+
+    <!-- Statics -->
+    <string name="statics_title">Statistics and reports</string>
+    <string name="statics_section_visits">Visit and plan statistics</string>
+    <string name="statics_metric_today">Today\'s visits</string>
+    <string name="statics_metric_completed">Completed visits</string>
+    <string name="statics_metric_unplanned">Unplanned visits</string>
+    <string name="statics_section_custody">Rep custody summary (meds and gifts)</string>
+    <string name="statics_custody_samples_title">Medicine and product samples</string>
+    <string name="statics_custody_gifts_title">Promotional gifts</string>
+    <string name="statics_custody_samples_received_format">Received: %1$d packs (%2$d SKUs)</string>
+    <string name="statics_custody_gifts_received_format">Received: %1$d pieces (%2$d SKUs)</string>
+    <string name="statics_custody_remaining_format">Remaining: %1$d</string>
+    <string name="statics_custody_dispatched_format">Dispatched: %1$d</string>
+    <string name="statics_section_accounts">Account distribution by category</string>
+    <string name="statics_account_clinic">Clinic</string>
+    <string name="statics_account_pharmacy">Pharmacy</string>
+    <string name="statics_account_hospital">Hospital</string>
+    <string name="statics_account_health_unit">Health units</string>
 </resources>

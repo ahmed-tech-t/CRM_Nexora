@@ -1,0 +1,12 @@
+---
+description: Before every plan — read rules, reuse shared UI, Figma via tokens
+alwaysApply: true
+---
+
+# Before every plan
+
+1. Read applicable always-apply project rules (`.cursor/rules/` + `.cursorrules`).
+2. **Must read** [`.cursor/rules/avoid-sealed-ui-samples.mdc`](avoid-sealed-ui-samples.mdc) before proposing any UI model / list-row shape.
+3. Reuse existing shared UI (`ui/components` primitives/chrome/widgets) before proposing a new Composable or duplicated chrome.
+4. If the task is Figma/UI parity: fetch design context first; map sizes/colors/gaps to theme tokens (`NexoraDimens` / theme colors) — no raw magic values in screens; UI-only unless domain was asked.
+5. Lock one approach in the plan (no Option A/B). Do not edit the plan file during implementation.

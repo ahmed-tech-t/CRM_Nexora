@@ -1,0 +1,42 @@
+---
+description: Mixed Arabic/English — RTL Arabic blocks, then English on next line
+alwaysApply: true
+---
+
+# Mixed Arabic + English layout (RTL)
+
+When a reply includes Arabic:
+
+1. Treat Arabic as **RTL**. Wrap each Arabic block so clients render right-to-left, e.g.:
+
+```html
+<div dir="rtl">
+
+الجملة العربية هنا.
+
+</div>
+```
+
+2. Put the **Arabic** (RTL) on its own line / block.
+3. Put related **English** on the **next line** (LTR as normal).
+4. Continue alternating that way — do not glue Arabic and English on the same line when both are needed for clarity.
+
+Examples of what belongs on the English line: file paths, class names, commands, error messages, Figma node ids, short technical terms kept in English by project convention.
+
+Do **not** apply RTL wrapping to pure-English code blocks, file paths, or citations where it would break markdown/links.
+
+Prefer:
+
+```html
+<div dir="rtl">
+
+افتح الملف التالي.
+
+</div>
+```
+
+```
+MainShellScreen.kt
+```
+
+Over inline mixing like `افتح MainShellScreen.kt`.

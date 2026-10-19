@@ -1,0 +1,31 @@
+---
+description: Avoid sealed UI models with baked-in resources and companion sample lists — read before every plan
+alwaysApply: true
+---
+
+# Avoid sealed UI + companion samples
+
+**Read this before every plan** (also listed in `pre-plan.mdc`).
+
+Do **not** model list/card UI rows as sealed class subtypes that hardcode `@StringRes` / `@DrawableRes` and only vary a number, with `companion object { val samples by lazy { … } }`.
+
+That approach (tried on Statics metrics / custody / account categories) is rejected:
+
+- Not dynamic — labels/icons locked in types instead of data
+- Fake data lives on production UI types
+- Extra files/subtypes for what is a simple row model
+
+## Prefer
+
+```kotlin
+@Immutable
+data class AccountCategoryUi(
+    val id: String,       // or a small enum id only
+    val name: String,
+    val quantity: Int,
+)
+```
+
+- Resolve icons/labels in a mapper or UI lookup from `id`, not via sealed subtypes
+- Keep sample/fixture lists in test fixtures or a dedicated fake source — not on the UI model companion
+- Use sealed classes for true UI/domain variants with different fields/behavior (e.g. visit kinds), not for static catalog chips

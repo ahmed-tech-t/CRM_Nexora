@@ -83,7 +83,7 @@ fun BottomNavBar(
 
 fun defaultBottomNavItems(): List<BottomNavItem> = listOf(
     BottomNavItem("home", R.string.nav_home, R.drawable.ic_home),
-    BottomNavItem("stats", R.string.nav_stats, R.drawable.ic_statistics),
+    BottomNavItem("statics", R.string.nav_statics, R.drawable.ic_statistics),
     BottomNavItem("visits", R.string.nav_visits, R.drawable.ic_visits),
     BottomNavItem("plan", R.string.nav_plan, R.drawable.ic_visits),
     BottomNavItem("custody", R.string.nav_custody, R.drawable.ic_packages),

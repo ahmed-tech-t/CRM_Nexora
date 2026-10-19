@@ -1,7 +1,5 @@
 package com.example.crm_nexora.ui.screens.datacenter.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,7 +11,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -23,14 +20,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.crm_nexora.R
 import com.example.crm_nexora.ui.components.chrome.NexoraCircularProgressIndicator
+import com.example.crm_nexora.ui.components.primitives.NexoraCard
 import com.example.crm_nexora.ui.components.primitives.NexoraIconButton
 import com.example.crm_nexora.ui.components.primitives.NexoraText
 import com.example.crm_nexora.ui.screens.datacenter.models.DataCenterSyncItemUi
 import com.example.crm_nexora.ui.screens.datacenter.models.DataCenterSyncStatus
 import com.example.crm_nexora.ui.theme.CRM_NexoraTheme
-import com.example.crm_nexora.ui.theme.NexoraBorder
 import com.example.crm_nexora.ui.theme.NexoraDimens
-import com.example.crm_nexora.ui.theme.NexoraSurface
 import com.example.crm_nexora.ui.theme.NexoraTextFaint
 import com.example.crm_nexora.ui.theme.NexoraTextPrimary
 import com.example.crm_nexora.ui.theme.NexoraTextSecondary
@@ -41,52 +37,54 @@ fun DataCenterSyncCard(
     onSync: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val syncing = item.status is DataCenterSyncStatus.Syncing
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(NexoraDimens.radiusLg))
-            .background(NexoraSurface)
-            .border(1.dp, NexoraBorder, RoundedCornerShape(NexoraDimens.radiusLg))
-            .padding(NexoraDimens.spaceMd),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(NexoraDimens.spaceMd),
-    ) {
-        Column(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(4.dp),
+    NexoraCard(modifier = modifier) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(NexoraDimens.spaceMd),
         ) {
-            NexoraText(
-                text = stringResource(item.titleRes),
-                style = MaterialTheme.typography.titleSmall.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 15.sp,
-                ),
-                color = NexoraTextPrimary,
-            )
-            NexoraText(
-                text = stringResource(item.subtitleRes),
-                style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
-                color = NexoraTextSecondary,
-            )
-            NexoraText(
-                text = item.lastUpdatedLabel,
-                style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
-                color = NexoraTextFaint,
-            )
-        }
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                NexoraText(
+                    text = stringResource(item.titleRes),
+                    style = MaterialTheme.typography.titleSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 15.sp,
+                    ),
+                    color = NexoraTextPrimary,
+                )
+                NexoraText(
+                    text = stringResource(item.subtitleRes),
+                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                    color = NexoraTextSecondary,
+                )
+                NexoraText(
+                    text = item.lastUpdatedLabel,
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                    color = NexoraTextFaint,
+                )
+            }
 
-        when (item.status) {
-            DataCenterSyncStatus.Idle -> NexoraIconButton(
-                painter = painterResource(if (item.id ==DataCenterSyncItemUi.ID_FULL) R.drawable.ic_colored_download else R.drawable.ic_download),
-                contentDescription = stringResource(R.string.cd_sync),
-                onClick = onSync,
-                shape = RoundedCornerShape(10.dp),
-                tint = Color.Unspecified,
-                modifier = Modifier.size(38.dp),
-            )
+            when (item.status) {
+                DataCenterSyncStatus.Idle -> NexoraIconButton(
+                    painter = painterResource(
+                        if (item.id == DataCenterSyncItemUi.ID_FULL) {
+                            R.drawable.ic_colored_download
+                        } else {
+                            R.drawable.ic_download
+                        },
+                    ),
+                    contentDescription = stringResource(R.string.cd_sync),
+                    onClick = onSync,
+                    shape = RoundedCornerShape(10.dp),
+                    tint = Color.Unspecified,
+                    modifier = Modifier.size(38.dp),
+                )
 
-            DataCenterSyncStatus.Syncing -> NexoraCircularProgressIndicator()
+                DataCenterSyncStatus.Syncing -> NexoraCircularProgressIndicator()
+            }
         }
     }
 }
