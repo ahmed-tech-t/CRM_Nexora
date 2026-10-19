@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CRM_Nexora</string>
+
+    <!-- Common -->
+    <string name="em_dash">—</string>
+    <string name="action_close">إغلاق</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_sync">مزامنة</string>
+    <string name="cd_back">رجوع</string>
+    <string name="cd_menu">القائمة</string>
+    <string name="cd_increment">زيادة</string>
+    <string name="cd_decrement">نقصان</string>
+    <string name="cd_clock">المدة</string>
+    <string name="cd_sync">مزامنة</string>
+
+    <!-- Visit status -->
+    <string name="visit_status_scheduled">مجدولة</string>
+    <string name="visit_status_in_progress">زيارة جارية الآن (معلقة)</string>
+    <string name="visit_status_pending_approval">بانتظار الاعتماد</string>
+    <string name="visit_status_completed">مكتملة</string>
+    <string name="visit_status_approved_unplanned">معتمدة (غير مخططة)</string>
+
+    <!-- Visit actions -->
+    <string name="visit_action_start">بدء زيارة</string>
+    <string name="visit_action_continue">استكمال الزيارة</string>
+
+    <!-- Visit kind (Planning / Planned / Unplanned) -->
+    <string name="planning">تخطيط</string>
+    <string name="planned">مخططة</string>
+    <string name="unplanned">غير مخططة</string>
+
+    <!-- Visit mode (Single / Double) -->
+    <string name="visit_type_label">نوع الزيارة</string>
+    <string name="visit_type_single">Single</string>
+    <string name="visit_type_double">Double</string>
+    <string name="visit_companion_label">المشرف المرافق:</string>
+    <string name="class_chip_format">Class %1$s</string>
+
+    <!-- Connection / offline strip -->
+    <string name="connection_online">متصل</string>
+    <string name="connection_offline">غير متصل</string>
+    <string name="offline_sync_title">مزامنة العمل (Offline)</string>
+    <string name="offline_sync_subtitle">يتم حفظ الزيارات محلياً ورفعها عند توفر الإنترنت</string>
+    <string name="pending_sync_format">%1$d بالانتظار</string>
+
+    <!-- Formats -->
+    <string name="specialty_with_class_format">%1$s • فئة (%2$s)</string>
+    <string name="doctor_specialty_format">%1$s • %2$s</string>
+    <string name="location_separator"> • </string>
+    <string name="class_only_format">فئة (%1$s)</string>
+
+    <!-- Attachment -->
+    <string name="attachment_fallback">مرفق</string>
+    <string name="attachment_required">إجباري</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_stats">الإحصائيات</string>
+    <string name="nav_visits">الزيارات</string>
+    <string name="nav_plan">تخطيط لزيارة</string>
+    <string name="nav_custody">العهدة</string>
+
+    <!-- Progress steps -->
+    <string name="step_entity_data">بيانات الجهة</string>
+    <string name="step_gifts_products">الهدايا والمنتجات</string>
+    <string name="step_result_finish">النتيجة والإنهاء</string>
+
+    <!-- Home / attendance -->
+    <string name="home_today_visits">زيارات اليوم</string>
+    <string name="home_more">المزيد</string>
+    <string name="attendance_recorded">تم تسجيل الحضور</string>
+    <string name="attendance_start_shift">بدء الدوام</string>
+    <string name="attendance_end_shift">إنهاء الدوام</string>
+    <string name="attendance_not_started">لم يبدأ الدوام</string>
+    <string name="placeholder_coming_soon">قريبًا</string>
+
+    <!-- Nav drawer -->
+    <string name="drawer_planning">التخطيط (Planning)</string>
+    <string name="drawer_planned">الزيارات المخططة (Planned)</string>
+    <string name="drawer_unplanned">زيارات غير مخططة (Unplanned)</string>
+    <string name="drawer_leaves">الإجازات والأعذار (مرضي/عارضة)</string>
+    <string name="drawer_add_doctor">اضافة طبيب</string>
+    <string name="drawer_info_center">مركز المعلومات</string>
+    <string name="drawer_specialty_code_format">%1$s • كود #%2$s</string>
+    <string name="drawer_device_id_format">Device ID: #%1$s ✓</string>
+    <string name="drawer_copyright">© 2026 جميع حقوق الملكية محفوظة لدى شركة نيكسورا للحلول البرمجية</string>
+    <string name="drawer_app_version_format">App version : %1$s</string>
+    <string name="drawer_app_version_default">1.1.0</string>
+</resources>

@@ -1,0 +1,21 @@
+---
+description: Product north star for CRM Nexora (medical-rep field CRM)
+alwaysApply: true
+---
+
+# Product context
+
+Full Arabic PRD: [`docs/PRODUCT_REQUIREMENTS_AR.md`](docs/PRODUCT_REQUIREMENTS_AR.md)
+
+**Goal:** Field control of medical reps — real routes, accurate visits/DCR, samples & gifts custody.
+
+**Visit kinds:**
+- `Planning` — multi-select accounts → set time → admin approval → becomes `Planned`
+- `Planned` — pre-approved plan
+- `Unplanned` — same-day ad-hoc
+
+**Account** on Visit is a free-form `String` (doctor / clinic / hospital / …), not a sealed type.
+
+**Also:** multi-tenant + device binding, anti-fake GPS, offline auto-sync, pending Continue/Cancel card, check-in/out via first/last visit, account create requests, leaves/expenses.
+
+When modeling visits, prefer sealed `Visit` with shared core fields; keep workflow status separate from sync status; no `ByteArray`/`Uri` on domain.

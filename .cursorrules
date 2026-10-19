@@ -40,17 +40,18 @@ Every feature must be organized into its own package (e.g., `subscription`), con
 * `utils/`: Local extensions or constants strictly used within this feature.
 
 ## 6. Theming, Resources & Previews
-* **Package Paths:** Source the core design system directly from `com.propertyadvisor.propertyadvisor.refactor.ui.profile.ui.theme`.
-* **Styling:** Use semantic attributes (`MaterialTheme.colorScheme.primary`, `MaterialTheme.typography.bodyMedium`). No hardcoded hex colors or raw text sizes.
+* **Package Paths:** Source the core design system from `com.example.crm_nexora.ui.theme`.
+* **Styling:** Use semantic attributes (`MaterialTheme.colorScheme.primary`, `MaterialTheme.typography.bodyMedium`) and Nexora tokens in `ui.theme`. No hardcoded hex colors or raw text sizes in feature screens.
 * **Shared UI (`components`):** Reusable `@Composable` widgets only →
-  `com.propertyadvisor.propertyadvisor.refactor.ui.screens.components`.
+  `com.example.crm_nexora.ui.components` (`primitives/`, `chrome/`, `widgets/`).
   Check this package before creating a new Composable.
-  
+* **Domain / Ui models / mappers:** Data-bearing widgets use
+  `com.example.crm_nexora.domain.models` + `com.example.crm_nexora.ui.models` + `com.example.crm_nexora.ui.mapper`.
+  Primitives take params/slots only—no domain models.
 * **Shared presentation logic (`common`):** Non-Composable code reused across features
   (coordinators, controllers, callback contracts) →
-  `com.propertyadvisor.propertyadvisor.refactor.ui.screens.common.{capability}`
-  (e.g. `common.contact_verification`). Do not place this in `components`.
-  Add a subpackage only when 2+ features share the same flow.
+  `com.example.crm_nexora.ui.common.{capability}`.
+  Do not place this in `components`. Add a subpackage only when 2+ features share the same flow.
 
 * **Previews & Adaptability:** Provide a `@Preview` for every UI component, ensuring it is adaptive to different screen sizes and configurations.
 
