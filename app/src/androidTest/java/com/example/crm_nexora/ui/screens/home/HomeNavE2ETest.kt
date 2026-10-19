@@ -67,4 +67,13 @@ class HomeNavE2ETest {
         composeRule.onNodeWithText(staticsTab).performClick()
         composeRule.onNodeWithText(staticsTitle).assertIsDisplayed()
     }
+
+    @Test
+    fun mainActivity_custodyTab_showsSampleAndGiftsTitle() {
+        val custodyTab = composeRule.activity.getString(R.string.nav_custody)
+        val title = composeRule.activity.getString(R.string.sample_and_gifts_title)
+
+        composeRule.onNodeWithText(custodyTab).performClick()
+        composeRule.onNodeWithText(title).assertIsDisplayed()
+    }
 }

@@ -26,6 +26,12 @@ val NexoraDanger = Color(0xFFDC2626)
 val NexoraWarning = Color(0xFFF59E0B)
 val NexoraTextFaint = Color(0xFF94A3B8)
 
+/** Low-stock inventory box (Figma samples & gifts) */
+val NexoraWarningSurface = Color(0xFFFFFBEB)
+val NexoraWarningBorder = Color(0xFFFDE68A)
+val NexoraWarningDeep = Color(0xFFB45309)
+val NexoraWarningChip = Color(0xFFFEF3C7)
+
 /** Home header (Figma 33:8060) */
 val NexoraOnlineBadgeBg = Color(0x1F10B981)
 val NexoraOnlineBadgeBorder = Color(0x4D10B981)

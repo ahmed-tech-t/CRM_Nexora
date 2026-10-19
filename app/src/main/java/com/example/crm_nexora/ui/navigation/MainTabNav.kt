@@ -11,6 +11,7 @@ import com.example.crm_nexora.R
 import com.example.crm_nexora.domain.utils.UiEvent
 import com.example.crm_nexora.navigation.AppRoute
 import com.example.crm_nexora.ui.screens.home.main.HomeScreen
+import com.example.crm_nexora.ui.screens.sampleandgifts.main.SampleAndGiftsScreen
 import com.example.crm_nexora.ui.screens.statics.main.StaticsScreen
 
 fun NavGraphBuilder.mainTabNav(
@@ -48,9 +49,11 @@ fun NavGraphBuilder.mainTabNav(
         )
     }
     composable<AppRoute.Custody> {
-        PlaceholderScreen(
-            title = stringResource(R.string.nav_custody),
+        SampleAndGiftsScreen(
             modifier = Modifier.padding(innerPadding),
+            snackbarHostState = snackbarHostState,
+            onNavigate = onNavigate,
+            navigationUp = navigationUp,
         )
     }
 }

@@ -120,4 +120,14 @@
     <string name="statics_account_pharmacy">Pharmacy</string>
     <string name="statics_account_hospital">Hospital</string>
     <string name="statics_account_health_unit">Health units</string>
+
+    <!-- Sample and gifts -->
+    <string name="sample_and_gifts_title">Rep custody</string>
+    <string name="sample_and_gifts_tab_samples_format">Samples</string>
+    <string name="sample_and_gifts_tab_gifts_format">Gifts</string>
+    <string name="sample_and_gifts_received_dispatched_format">Received: %1$d  Dispatched: %2$d</string>
+    <string name="sample_and_gifts_received_label">Received:\u00A0</string>
+    <string name="sample_and_gifts_dispatched_label">\u00A0 Dispatched:\u00A0</string>
+    <string name="sample_and_gifts_pieces_format">%1$d pcs</string>
+    <string name="sample_and_gifts_low_stock">Low stock</string>
 </resources>

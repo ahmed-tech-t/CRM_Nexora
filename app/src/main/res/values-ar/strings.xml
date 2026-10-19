@@ -120,4 +120,14 @@
     <string name="statics_account_pharmacy">صيدلية</string>
     <string name="statics_account_hospital">مستشفى</string>
     <string name="statics_account_health_unit">وحدات صحيه</string>
+
+    <!-- Sample and gifts -->
+    <string name="sample_and_gifts_title">عهدة المندوب</string>
+    <string name="sample_and_gifts_tab_samples_format">العينات</string>
+    <string name="sample_and_gifts_tab_gifts_format">الهدايا</string>
+    <string name="sample_and_gifts_received_dispatched_format">المستلم: %1$d  المنصرف: %2$d</string>
+    <string name="sample_and_gifts_received_label">المستلم:\u00A0</string>
+    <string name="sample_and_gifts_dispatched_label">\u00A0 المنصرف:\u00A0</string>
+    <string name="sample_and_gifts_pieces_format">%1$d قطعة</string>
+    <string name="sample_and_gifts_low_stock">رصيد منخفض</string>
 </resources>
