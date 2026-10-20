@@ -36,7 +36,7 @@ class SampleAndGiftsViewModelTest {
         }
 
         assertTrue(lowStock.isNotEmpty())
-        assertTrue(lowStock.all { it.remainingUnit.isNotBlank() })
+        assertTrue(lowStock.all { it.remaining >= 0 })
     }
 
     @Test

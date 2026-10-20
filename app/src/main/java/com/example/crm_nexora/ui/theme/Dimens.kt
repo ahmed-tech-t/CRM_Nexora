@@ -13,10 +13,14 @@ object NexoraDimens {
     val spaceMetricRows = 20.dp
     val spaceXl = 24.dp
 
-    val radiusSm = 4.dp
+    val radiusXs = 4.dp
+    val radiusTight = 6.dp
+    val radiusSm = 8.dp
     val radiusMd = 12.dp
     val radiusLg = 16.dp
     val radiusXl = 24.dp
+    val radiusPill = 29.dp
+    val radiusSheet = 32.dp
 
     val borderThin = 1.dp
     val borderFocus = 2.dp
@@ -32,4 +36,12 @@ object NexoraDimens {
     val statusDot = 8.dp
     val iconStaticsWidth = 12.dp
     val iconStaticsHeight = 16.dp
+
+    val iconSizeSm = 14.dp
+    val iconSizeMd = 18.dp
+    val iconSizeLg = 20.dp
+    val iconSizeXl = 24.dp
+    val sheetStepperBtnSize = 28.dp
+    val attachBoxSize = 42.dp
+    val attachPillWidth = 40.dp
 }

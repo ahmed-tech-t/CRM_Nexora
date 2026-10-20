@@ -29,6 +29,9 @@ sealed interface AppRoute {
     @Serializable
     data object DataCenter : AppRoute
 
+    @Serializable
+    data object UnplannedVisit : AppRoute
+
     companion object {
         val tabRoutes: List<AppRoute> = listOf(Home, Statics, Visits, Plan, Custody)
 
@@ -47,7 +50,7 @@ sealed interface AppRoute {
             Visits -> "visits"
             Plan -> "plan"
             Custody -> "custody"
-            Main, DataCenter -> "home"
+            Main, DataCenter, UnplannedVisit -> "home"
         }
     }
 }

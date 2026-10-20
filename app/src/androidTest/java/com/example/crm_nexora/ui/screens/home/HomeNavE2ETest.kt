@@ -76,4 +76,15 @@ class HomeNavE2ETest {
         composeRule.onNodeWithText(custodyTab).performClick()
         composeRule.onNodeWithText(title).assertIsDisplayed()
     }
+
+    @Test
+    fun mainActivity_drawerUnplanned_opensUnplannedVisit() {
+        val menuCd = composeRule.activity.getString(R.string.cd_menu)
+        val unplanned = composeRule.activity.getString(R.string.drawer_unplanned)
+        val title = composeRule.activity.getString(R.string.unplanned_visit_title)
+
+        composeRule.onNodeWithContentDescription(menuCd).performClick()
+        composeRule.onNodeWithText(unplanned).performClick()
+        composeRule.onNodeWithText(title).assertIsDisplayed()
+    }
 }

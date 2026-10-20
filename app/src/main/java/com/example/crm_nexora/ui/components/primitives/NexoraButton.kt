@@ -55,9 +55,10 @@ fun NexoraButton(
     enabled: Boolean = true,
     fillMaxWidth: Boolean = true,
     compact: Boolean = false,
+    textStyle: TextStyle? = null,
     leadingIcon: (@Composable () -> Unit)? = null,
 ) {
-    val shape = RoundedCornerShape(NexoraDimens.radiusMd)
+    val shape = RoundedCornerShape(NexoraDimens.radiusLg)
     val widthModifier = if (fillMaxWidth) modifier.fillMaxWidth() else modifier
     val minHeight = if (compact) NexoraDimens.buttonCompactHeight else NexoraDimens.buttonMinHeight
     val minSize = Modifier.defaultMinSize(minHeight = minHeight)
@@ -66,7 +67,7 @@ fun NexoraButton(
     } else {
         PaddingValues(horizontal = 16.dp, vertical = 14.dp)
     }
-    val labelStyle = if (compact) {
+    val labelStyle = textStyle ?: if (compact) {
         MaterialTheme.typography.labelMedium
     } else {
         MaterialTheme.typography.labelLarge

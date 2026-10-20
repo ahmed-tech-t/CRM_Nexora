@@ -182,7 +182,7 @@ private fun DrawerMenuRow(
         modifier = modifier
             .fillMaxWidth()
             .height(36.dp)
-            .clip(RoundedCornerShape(NexoraDimens.radiusSm))
+            .clip(RoundedCornerShape(NexoraDimens.radiusXs))
             .clickable(onClick = onClick)
             .padding(horizontal = 8.dp),
     ) {

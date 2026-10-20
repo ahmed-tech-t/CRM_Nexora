@@ -1,4 +1,4 @@
-package com.example.crm_nexora.ui.screens.sampleandgifts.models
+﻿package com.example.crm_nexora.ui.screens.sampleandgifts.models
 
 object SampleAndGiftsFakes {
     val items: List<SampleAndGiftsItemUi> by lazy {
@@ -10,7 +10,6 @@ object SampleAndGiftsFakes {
                 received = 100,
                 dispatched = 62,
                 remaining = 38,
-                remainingUnit = "علبة متبقية",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -20,7 +19,6 @@ object SampleAndGiftsFakes {
                 received = 80,
                 dispatched = 40,
                 remaining = 40,
-                remainingUnit = "زجاجة متبقية",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -30,7 +28,6 @@ object SampleAndGiftsFakes {
                 received = 70,
                 dispatched = 63,
                 remaining = 7,
-                remainingUnit = "علب متبقية",
                 isLowStock = true,
             ),
             SampleAndGiftsItemUi(
@@ -40,7 +37,6 @@ object SampleAndGiftsFakes {
                 received = 60,
                 dispatched = 35,
                 remaining = 25,
-                remainingUnit = "علبة متبقية",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -50,7 +46,6 @@ object SampleAndGiftsFakes {
                 received = 90,
                 dispatched = 50,
                 remaining = 40,
-                remainingUnit = "علبة متبقية",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -60,7 +55,6 @@ object SampleAndGiftsFakes {
                 received = 45,
                 dispatched = 20,
                 remaining = 25,
-                remainingUnit = "علبة متبقية",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -70,7 +64,6 @@ object SampleAndGiftsFakes {
                 received = 100,
                 dispatched = 62,
                 remaining = 15,
-                remainingUnit = "",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -80,7 +73,6 @@ object SampleAndGiftsFakes {
                 received = 50,
                 dispatched = 28,
                 remaining = 22,
-                remainingUnit = "",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -90,7 +82,6 @@ object SampleAndGiftsFakes {
                 received = 20,
                 dispatched = 12,
                 remaining = 8,
-                remainingUnit = "",
                 isLowStock = false,
             ),
             SampleAndGiftsItemUi(
@@ -100,7 +91,6 @@ object SampleAndGiftsFakes {
                 received = 40,
                 dispatched = 18,
                 remaining = 22,
-                remainingUnit = "",
                 isLowStock = false,
             ),
         )

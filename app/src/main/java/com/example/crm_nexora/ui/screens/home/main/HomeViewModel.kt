@@ -35,6 +35,9 @@ class HomeViewModel @Inject constructor() : BaseViewModel() {
                     NavDrawerItem.InfoCenter -> {
                         sendUiEvent(UiEvent.Navigate(AppRoute.DataCenter))
                     }
+                    NavDrawerItem.Unplanned -> {
+                        sendUiEvent(UiEvent.Navigate(AppRoute.UnplannedVisit))
+                    }
                     else -> {
                         sendUiEvent(
                             UiEvent.ShowSnackBar(UiText.StringResource(R.string.placeholder_coming_soon)),

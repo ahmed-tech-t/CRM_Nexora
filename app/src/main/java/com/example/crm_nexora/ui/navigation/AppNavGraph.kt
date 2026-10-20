@@ -11,6 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.crm_nexora.navigation.AppRoute
 import com.example.crm_nexora.ui.screens.datacenter.main.DataCenterScreen
 import com.example.crm_nexora.ui.screens.main.MainShellScreen
+import com.example.crm_nexora.ui.screens.unplannedvisit.main.UnplannedVisitScreen
 
 @Composable
 fun AppNavGraph(
@@ -33,6 +34,13 @@ fun AppNavGraph(
         }
         composable<AppRoute.DataCenter> {
             DataCenterScreen(
+                snackbarHostState = snackbarHostState,
+                onNavigate = { event -> navController.navigate(event.destination) },
+                navigationUp = { navController.popBackStack() },
+            )
+        }
+        composable<AppRoute.UnplannedVisit> {
+            UnplannedVisitScreen(
                 snackbarHostState = snackbarHostState,
                 onNavigate = { event -> navController.navigate(event.destination) },
                 navigationUp = { navController.popBackStack() },

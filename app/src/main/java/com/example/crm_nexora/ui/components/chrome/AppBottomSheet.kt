@@ -31,8 +31,8 @@ fun AppBottomSheet(
         sheetState = sheetState,
         modifier = modifier,
         shape = RoundedCornerShape(
-            topStart = NexoraDimens.radiusLg,
-            topEnd = NexoraDimens.radiusLg,
+            topStart = NexoraDimens.radiusSheet,
+            topEnd = NexoraDimens.radiusSheet,
         ),
     ) {
         Column(

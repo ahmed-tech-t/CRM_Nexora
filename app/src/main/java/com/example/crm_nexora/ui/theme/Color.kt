@@ -19,6 +19,8 @@ val NexoraSurfaceChip = Color(0xFFF1F5F9)
 val NexoraSurfaceFocus = Color(0xFFEFF6FF)
 val NexoraBorder = Color(0xFFE2E8F0)
 val NexoraBorderFocus = Color(0xFFBFDBFE)
+val NexoraSky = Color(0xFF0284C7)
+val NexoraSkyBorder = Color(0xFFE0F2FE)
 
 val NexoraStatusBlue = Color(0xFF1D4ED8)
 val NexoraSuccess = Color(0xFF10B981)

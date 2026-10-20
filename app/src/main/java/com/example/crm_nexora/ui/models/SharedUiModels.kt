@@ -31,8 +31,8 @@ data class VisitUi(
     val type: VisitType = VisitType.Planned,
     val supervisorName: String = "",
     val classCategory: String = "",
-    val gifts: List<QuantityLineUiModel> = emptyList(),
-    val products: List<QuantityLineUiModel> = emptyList(),
+    val gifts: List<GiftProductUiModel> = emptyList(),
+    val products: List<GiftProductUiModel> = emptyList(),
     val giftsQty: Int = 0,
     val productsQty: Int = 0,
     val voiceNote: String = "",
@@ -40,16 +40,9 @@ data class VisitUi(
     val durationLabel: String = "",
 )
 
+/** Gift or product/sample line for visit custody UI. */
 @Immutable
-data class QuantityLineUiModel(
-    val id: String,
-    val name: String,
-    val quantityLabel: String,
-    val quantity: Int,
-)
-
-@Immutable
-data class QuantityItemUiModel(
+data class GiftProductUiModel(
     val id: String,
     val name: String,
     val quantityLabel: String,

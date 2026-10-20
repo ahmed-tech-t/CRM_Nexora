@@ -34,7 +34,7 @@ import com.example.crm_nexora.ui.components.primitives.NexoraText
 import com.example.crm_nexora.ui.components.primitives.NexoraTextField
 import com.example.crm_nexora.ui.components.widgets.AttachmentPillChip
 
-import com.example.crm_nexora.ui.components.widgets.QuantityItemRow
+import com.example.crm_nexora.ui.components.widgets.GiftProductQuantityRow
 import com.example.crm_nexora.ui.components.widgets.StatMetricTile
 import com.example.crm_nexora.ui.mapper.toUi
 import com.example.crm_nexora.ui.preview.VisitSamples
@@ -95,12 +95,12 @@ fun ComponentCatalogScreen() {
             NexoraText("Widgets", style = MaterialTheme.typography.titleMedium)
 
 
-            QuantityItemRow(
+            GiftProductQuantityRow(
                 model = VisitSamples.giftItem(quantity = giftQty).toUi(),
                 onIncrement = { giftQty++ },
                 onDecrement = { if (giftQty > 0) giftQty-- },
             )
-            QuantityItemRow(
+            GiftProductQuantityRow(
                 model = VisitSamples.productItem(quantity = sampleQty).toUi(),
                 onIncrement = { sampleQty++ },
                 onDecrement = { if (sampleQty > 0) sampleQty-- },

@@ -15,6 +15,5 @@ data class SampleAndGiftsItemUi(
     val received: Int,
     val dispatched: Int,
     val remaining: Int,
-    val remainingUnit: String,
     val isLowStock: Boolean,
 )

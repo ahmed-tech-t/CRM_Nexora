@@ -114,8 +114,8 @@ internal fun VisitClassChip(classCategory: String, modifier: Modifier = Modifier
         color = NexoraStatusBlue,
         textAlign = TextAlign.Start,
         modifier = modifier
-            .border(NexoraDimens.borderThin, NexoraBorderFocus, RoundedCornerShape(4.dp))
-            .background(NexoraSurfaceFocus, RoundedCornerShape(4.dp))
+            .border(NexoraDimens.borderThin, NexoraBorderFocus, RoundedCornerShape(NexoraDimens.radiusXs))
+            .background(NexoraSurfaceFocus, RoundedCornerShape(NexoraDimens.radiusXs))
             .padding(horizontal = 8.dp, vertical = 2.dp),
     )
 }
@@ -132,7 +132,7 @@ internal fun VisitTagChip(text: String, modifier: Modifier = Modifier) {
         ),
         color = NexoraTextMuted,
         modifier = modifier
-            .background(NexoraSurfaceChip, RoundedCornerShape(4.dp))
+            .background(NexoraSurfaceChip, RoundedCornerShape(NexoraDimens.radiusXs))
             .padding(horizontal = 8.dp, vertical = 2.dp),
     )
 }

@@ -77,11 +77,8 @@ fun SampleAndGiftsItemCard(
                     modifier = Modifier.fillMaxWidth(),
                 )
             }
+            GiftPiecesPill(remaining = item.remaining)
 
-            when (item.type) {
-                SampleAndGiftsItemType.Sample -> SampleRemainingBox(item = item)
-                SampleAndGiftsItemType.Gift -> GiftPiecesPill(remaining = item.remaining)
-            }
         }
     }
 }
@@ -148,47 +145,6 @@ private fun LowStockChip(modifier: Modifier = Modifier) {
             ),
             color = NexoraWarningDeep,
         )
-    }
-}
-
-@Composable
-private fun SampleRemainingBox(
-    item: SampleAndGiftsItemUi,
-    modifier: Modifier = Modifier,
-) {
-    val bg = if (item.isLowStock) NexoraWarningSurface else NexoraSurfaceMuted
-    val border = if (item.isLowStock) NexoraWarningBorder else NexoraBorder
-    val numberColor = if (item.isLowStock) NexoraWarningDeep else NexoraNavy
-    Box(
-        modifier = modifier
-            .widthIn(min = 69.dp)
-            .background(bg, RoundedCornerShape(NexoraDimens.radiusMd))
-            .border(NexoraDimens.borderThin, border, RoundedCornerShape(NexoraDimens.radiusMd))
-            .padding(horizontal = NexoraDimens.spaceMd, vertical = 5.dp),
-        contentAlignment = Alignment.Center,
-    ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            NexoraText(
-                text = item.remaining.toString(),
-                style = MaterialTheme.typography.titleMedium.copy(
-                    fontWeight = FontWeight.ExtraBold,
-                    fontSize = 15.sp,
-                    lineHeight = 16.5.sp,
-                ),
-                color = numberColor,
-                textAlign = TextAlign.Center,
-            )
-            NexoraText(
-                text = item.remainingUnit,
-                style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 9.5.sp,
-                    lineHeight = 12.sp,
-                ),
-                color = NexoraTextMuted,
-                textAlign = TextAlign.Center,
-            )
-        }
     }
 }
 

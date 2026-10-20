@@ -6,6 +6,7 @@ import com.example.crm_nexora.domain.models.AttachmentPill
 import com.example.crm_nexora.domain.models.ConnectionState
 import com.example.crm_nexora.domain.models.ConnectionStatus
 import com.example.crm_nexora.domain.models.QuantityItem
+import com.example.crm_nexora.domain.models.QuantityKind
 import com.example.crm_nexora.domain.models.QuantityLine
 import com.example.crm_nexora.domain.models.Shift
 import com.example.crm_nexora.domain.models.StatMetric
@@ -17,8 +18,7 @@ import com.example.crm_nexora.domain.models.VisitType
 import com.example.crm_nexora.ui.models.AttendanceUi
 import com.example.crm_nexora.ui.models.AttachmentPillUiModel
 import com.example.crm_nexora.ui.models.ConnectionStatusUiModel
-import com.example.crm_nexora.ui.models.QuantityItemUiModel
-import com.example.crm_nexora.ui.models.QuantityLineUiModel
+import com.example.crm_nexora.ui.models.GiftProductUiModel
 import com.example.crm_nexora.ui.models.StatMetricUiModel
 import com.example.crm_nexora.ui.models.UserUi
 import com.example.crm_nexora.ui.models.VisitUi
@@ -30,8 +30,8 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 fun Visit.toUi(): VisitUi {
-    val giftLines = gifts.orEmpty().map { it.toUiLine() }
-    val productLines = products.orEmpty().map { it.toUiLine() }
+    val giftLines = gifts.orEmpty().map { it.toGiftProductUi(QuantityKind.Gift) }
+    val productLines = products.orEmpty().map { it.toGiftProductUi(QuantityKind.Product) }
     val resolvedGiftsQty = giftsQty ?: giftLines.sumOf { it.quantity }
     val resolvedProductsQty = productsQty ?: productLines.sumOf { it.quantity }
 
@@ -60,9 +60,9 @@ fun Visit.toUi(): VisitUi {
     )
 }
 
-fun QuantityItem.toUi(): QuantityItemUiModel {
+fun QuantityItem.toUi(): GiftProductUiModel {
     val qty = quantity.coerceAtLeast(0)
-    return QuantityItemUiModel(
+    return GiftProductUiModel(
         id = id,
         name = name,
         quantity = qty,
@@ -97,7 +97,7 @@ fun AttachmentPill.toUi(): AttachmentPillUiModel = AttachmentPillUiModel(
 )
 
 fun List<Visit>.toVisitUi(): List<VisitUi> = map { it.toUi() }
-fun List<QuantityItem>.toQuantityUi(): List<QuantityItemUiModel> = map { it.toUi() }
+fun List<QuantityItem>.toQuantityUi(): List<GiftProductUiModel> = map { it.toUi() }
 fun List<StatMetric>.toStatMetricUi(): List<StatMetricUiModel> = map { it.toUi() }
 
 fun User.toUi(): UserUi = UserUi(
@@ -129,13 +129,14 @@ private fun Instant?.toAttendanceTimeLabel(zoneId: ZoneId, locale: Locale): Stri
     return atZone(zoneId).toLocalTime().format(formatter)
 }
 
-private fun QuantityLine.toUiLine(): QuantityLineUiModel {
+private fun QuantityLine.toGiftProductUi(kind: QuantityKind): GiftProductUiModel {
     val qty = quantity.coerceAtLeast(0)
-    return QuantityLineUiModel(
+    return GiftProductUiModel(
         id = id,
         name = name,
         quantity = qty,
         quantityLabel = qty.toString(),
+        kind = kind,
     )
 }
 

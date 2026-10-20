@@ -107,4 +107,19 @@ class HomeViewModelTest {
         val event = nav.await() as UiEvent.Navigate
         assertEquals(AppRoute.DataCenter, event.destination)
     }
+
+    @Test
+    fun onDrawerItem_unplanned_navigatesToUnplannedVisit() = runTest(UnconfinedTestDispatcher()) {
+        val vm = HomeViewModel()
+        val nav = async {
+            vm.uiEvent.first { it is UiEvent.Navigate }
+        }
+
+        vm.onEvent(HomeEvents.OnMenuClick)
+        vm.onEvent(HomeEvents.OnDrawerItem(NavDrawerItem.Unplanned))
+
+        assertFalse(vm.state.value.isDrawerOpen)
+        val event = nav.await() as UiEvent.Navigate
+        assertEquals(AppRoute.UnplannedVisit, event.destination)
+    }
 }
