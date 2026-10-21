@@ -1,5 +1,6 @@
 package com.example.crm_nexora.ui.components.primitives
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -36,7 +37,6 @@ import com.example.crm_nexora.ui.theme.NexoraTextSecondary
 
 enum class NexoraButtonVariant {
     Primary,
-    Navy,
     Secondary,
     /** Filled chip surface — cancel / low-emphasis actions. */
     Muted,
@@ -55,6 +55,7 @@ fun NexoraButton(
     enabled: Boolean = true,
     fillMaxWidth: Boolean = true,
     compact: Boolean = false,
+    border: BorderStroke? = null,
     textStyle: TextStyle? = null,
     leadingIcon: (@Composable () -> Unit)? = null,
 ) {
@@ -77,23 +78,9 @@ fun NexoraButton(
         NexoraButtonVariant.Primary -> Button(
             onClick = onClick,
             enabled = enabled,
+            border = border,
             modifier = widthModifier.then(minSize),
             shape = shape,
-            contentPadding = contentPadding,
-            colors = ButtonDefaults.buttonColors(
-                containerColor = NexoraPrimary,
-                contentColor = Color.White,
-            ),
-            elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
-        ) {
-            NexoraButtonLabel(text = text, style = labelStyle, leadingIcon = leadingIcon)
-        }
-
-        NexoraButtonVariant.Navy -> Button(
-            onClick = onClick,
-            enabled = enabled,
-            modifier = widthModifier.then(minSize),
-            shape = RoundedCornerShape(NexoraDimens.radiusLg),
             contentPadding = contentPadding,
             colors = ButtonDefaults.buttonColors(
                 containerColor = NexoraNavy,
@@ -103,6 +90,8 @@ fun NexoraButton(
         ) {
             NexoraButtonLabel(text = text, style = labelStyle, leadingIcon = leadingIcon)
         }
+
+
 
         NexoraButtonVariant.Secondary -> OutlinedButton(
             onClick = onClick,

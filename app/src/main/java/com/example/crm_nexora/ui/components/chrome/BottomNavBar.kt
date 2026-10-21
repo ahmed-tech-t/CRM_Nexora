@@ -46,8 +46,7 @@ fun BottomNavBar(
 ) {
     NavigationBar(
         modifier = modifier
-            .fillMaxWidth()
-            .height(NexoraDimens.bottomNavHeight),
+            .fillMaxWidth(),
         containerColor = MaterialTheme.colorScheme.surface,
     ) {
         items.forEach { item ->

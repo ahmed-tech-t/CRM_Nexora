@@ -19,7 +19,7 @@ class DataCenterViewModel @Inject constructor() : BaseViewModel() {
 
     fun onEvent(event: DataCenterEvents) {
         when (event) {
-            DataCenterEvents.OnBack -> sendUiEvent(UiEvent.NavigationUp)
+            DataCenterEvents.OnBack -> sendEvent(UiEvent.NavigationUp)
             is DataCenterEvents.OnSync -> syncCategory(event.categoryId)
         }
     }

@@ -1,8 +1,11 @@
 package com.example.crm_nexora.ui.screens.main
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
@@ -13,12 +16,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.crm_nexora.ui.components.chrome.BottomNavBar
 import com.example.crm_nexora.ui.components.chrome.LocalScaffoldController
 import com.example.crm_nexora.ui.components.chrome.ScaffoldComponent
 import com.example.crm_nexora.ui.components.chrome.ScaffoldController
 import com.example.crm_nexora.ui.components.chrome.defaultBottomNavItems
 import com.example.crm_nexora.ui.theme.CRM_NexoraTheme
+import com.example.crm_nexora.ui.theme.NexoraNavy
 
 /**
  * Shared chrome for bottom-nav tabs — owns [BottomNavBar] and snackbar host.
@@ -38,7 +43,11 @@ fun MainShell(
             containerColor = MaterialTheme.colorScheme.background,
             modifier = modifier.fillMaxSize(),
             topBar = {
-                scaffoldController.topBar?.invoke()
+                Box(Modifier
+                    .fillMaxWidth()
+                    .background(NexoraNavy).defaultMinSize(minHeight = 100.dp)) {
+                    scaffoldController.topBar?.invoke()
+                }
             },
             bottomBar = {
                 BottomNavBar(
@@ -52,7 +61,7 @@ fun MainShell(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun MainShellPreview() {
     CRM_NexoraTheme {

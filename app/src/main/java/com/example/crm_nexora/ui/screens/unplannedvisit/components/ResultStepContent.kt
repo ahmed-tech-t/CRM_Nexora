@@ -246,7 +246,7 @@ fun ResultStepContent(
                     NexoraButton(
                         text = stringResource(R.string.unplanned_voice_note),
                         onClick = { onEvent(UnplannedVisitEvents.VoiceNoteClick) },
-                        variant = NexoraButtonVariant.Navy,
+                        variant = NexoraButtonVariant.Primary,
                         fillMaxWidth = false,
                         compact = true,
                         textStyle = MaterialTheme.typography.labelSmall.copy(

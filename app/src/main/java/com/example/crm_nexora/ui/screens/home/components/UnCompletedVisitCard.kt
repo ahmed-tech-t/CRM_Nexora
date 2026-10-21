@@ -41,6 +41,7 @@ import com.example.crm_nexora.ui.preview.VisitSamples
 import com.example.crm_nexora.ui.theme.CRM_NexoraTheme
 import com.example.crm_nexora.ui.theme.NexoraDimens
 import com.example.crm_nexora.ui.theme.NexoraStatusBlue
+import com.example.crm_nexora.ui.theme.NexoraSuccess
 import com.example.crm_nexora.ui.theme.NexoraTextPrimary
 import com.example.crm_nexora.ui.theme.NexoraTextSecondary
 
@@ -79,7 +80,7 @@ fun UnCompletedVisitCard(
                             fontSize = 11.sp,
                             lineHeight = 16.5.sp,
                         ),
-                        color = NexoraStatusBlue,
+                        color = NexoraSuccess,
                         textAlign = TextAlign.Start,
                     )
                 }

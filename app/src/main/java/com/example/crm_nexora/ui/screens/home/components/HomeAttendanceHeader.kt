@@ -1,5 +1,6 @@
 package com.example.crm_nexora.ui.screens.home.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -30,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.crm_nexora.R
 import com.example.crm_nexora.ui.components.primitives.NexoraButton
+import com.example.crm_nexora.ui.components.primitives.NexoraButtonVariant
 import com.example.crm_nexora.ui.components.primitives.NexoraIcon
 import com.example.crm_nexora.ui.components.primitives.NexoraText
 import com.example.crm_nexora.ui.mapper.toUi
@@ -61,7 +63,6 @@ fun HomeAttendanceHeader(
     user: UserUi,
     attendance: AttendanceUi,
     connection: ConnectionStatusUiModel,
-    onMenuClick: () -> Unit,
     onStartShift: () -> Unit,
     onEndShift: () -> Unit,
     modifier: Modifier = Modifier,
@@ -83,23 +84,6 @@ fun HomeAttendanceHeader(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(NexoraDimens.spaceSm),
             ) {
-                // RTL: menu at screen-right edge, then name
-                Box(
-                    modifier = Modifier
-                        .size(46.dp)
-                        .clip(RoundedCornerShape(14.dp))
-                        .background(NexoraMenuBtnBg)
-                        .border(1.dp, NexoraMenuBtnBorder, RoundedCornerShape(14.dp))
-                        .clickable(onClick = onMenuClick),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    NexoraIcon(
-                        imageVector = Icons.Default.Menu,
-                        contentDescription = stringResource(R.string.cd_menu),
-                        tint = Color.White,
-                        modifier = Modifier.size(22.dp),
-                    )
-                }
                 Column(horizontalAlignment = Alignment.Start) {
                     NexoraText(
                         text = user.displayName,
@@ -168,7 +152,7 @@ fun HomeAttendanceHeader(
                             NexoraText(
                                 text = "•",
                                 style = MaterialTheme.typography.bodyMedium,
-                                color = NexoraTextSecondary,
+                                color = NexoraSuccess,
                             )
                             NexoraText(
                                 text = attendance.checkInLocationLabel,
@@ -189,25 +173,23 @@ fun HomeAttendanceHeader(
                     )
                 }
             }
-
-            if (attendance.isCheckedIn) {
-                EndShiftButton(onClick = onEndShift)
-            } else {
                 NexoraButton(
-                    text = stringResource(R.string.attendance_start_shift),
+                    text =    if (attendance.isCheckedIn) stringResource(R.string.attendance_start_shift) else  stringResource(R.string.attendance_start_shift),
                     onClick = onStartShift,
                     fillMaxWidth = false,
+                    border = BorderStroke(width = 1.dp, color = Color(0xB3383131)),
+                    variant = NexoraButtonVariant.Primary,
                     compact = true,
                     leadingIcon = {
                         NexoraIcon(
-                            imageVector = Icons.Default.PlayArrow,
+                            painter = painterResource(R.drawable.ic_power),
                             contentDescription = null,
                             modifier = Modifier.size(14.dp),
                             tint = Color.White,
                         )
                     },
                 )
-            }
+
         }
     }
 }
@@ -249,41 +231,8 @@ private fun ConnectionStatusChip(
     }
 }
 
-@Composable
-private fun EndShiftButton(
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Row(
-        modifier = modifier
-            .clip(RoundedCornerShape(NexoraDimens.radiusMd))
-            .background(NexoraEndShiftBg)
-            .border(1.dp, NexoraEndShiftBorder, RoundedCornerShape(NexoraDimens.radiusMd))
-            .clickable(onClick = onClick)
-            .padding(horizontal = 14.dp, vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(6.dp),
-    ) {
-        NexoraIcon(
-            painter = painterResource(R.drawable.ic_power),
-            contentDescription = null,
-            modifier = Modifier.size(10.dp),
-            tint = NexoraEndShiftText,
-        )
-        NexoraText(
-            text = stringResource(R.string.attendance_end_shift),
-            style = MaterialTheme.typography.labelSmall.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 11.sp,
-                lineHeight = 16.5.sp,
-            ),
-            color = NexoraEndShiftText,
-        )
 
-    }
-}
-
-@Preview(showBackground = true, locale = "ar", backgroundColor = 0xFF0F172A)
+@Preview(showBackground = true, locale = "ar", backgroundColor = 0xFF095D7E)
 @Composable
 private fun HomeAttendanceHeaderCheckedInPreview() {
     CRM_NexoraTheme {
@@ -293,7 +242,6 @@ private fun HomeAttendanceHeaderCheckedInPreview() {
                 checkInLocationLabel = "ميدان شرف",
             ),
             connection = HomeSamples.connectionOnline().toUi(),
-            onMenuClick = {},
             onStartShift = {},
             onEndShift = {},
         )

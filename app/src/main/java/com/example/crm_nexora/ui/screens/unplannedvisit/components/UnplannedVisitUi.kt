@@ -114,7 +114,7 @@ private fun FooterBar(
                 NexoraButton(
                     text = stringResource(R.string.action_next),
                     onClick = { onEvent(UnplannedVisitEvents.Next) },
-                    variant = NexoraButtonVariant.Navy,
+                    variant = NexoraButtonVariant.Primary,
                 )
             }
             UnplannedVisitStep.GiftsProducts -> {
@@ -128,7 +128,7 @@ private fun FooterBar(
                 NexoraButton(
                     text = stringResource(R.string.action_next),
                     onClick = { onEvent(UnplannedVisitEvents.Next) },
-                    variant = NexoraButtonVariant.Navy,
+                    variant = NexoraButtonVariant.Primary,
                     modifier = Modifier.weight(2f),
                     fillMaxWidth = true,
                 )
@@ -141,17 +141,14 @@ private fun FooterBar(
                     modifier = Modifier.weight(1f),
                     fillMaxWidth = true,
                 )
-                Button(
+
+                NexoraButton(
+                    text = stringResource(R.string.unplanned_visit_end),
                     onClick = { onEvent(UnplannedVisitEvents.EndVisit) },
+                    variant = NexoraButtonVariant.Primary,
                     modifier = Modifier.weight(2f),
-                    shape = RoundedCornerShape(NexoraDimens.radiusLg),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = NexoraSuccess,
-                        contentColor = Color.White,
-                    ),
-                ) {
-                    NexoraText(text = stringResource(R.string.unplanned_visit_end))
-                }
+                    fillMaxWidth = true,
+                )
             }
         }
     }

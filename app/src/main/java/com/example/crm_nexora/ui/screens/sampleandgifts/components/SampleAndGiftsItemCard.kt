@@ -34,6 +34,7 @@ import com.example.crm_nexora.ui.theme.NexoraNavy
 import com.example.crm_nexora.ui.theme.NexoraSurfaceChip
 import com.example.crm_nexora.ui.theme.NexoraSurfaceMuted
 import com.example.crm_nexora.ui.theme.NexoraTextMuted
+import com.example.crm_nexora.ui.theme.NexoraTextPrimary
 import com.example.crm_nexora.ui.theme.NexoraTextSecondary
 import com.example.crm_nexora.ui.theme.NexoraWarningBorder
 import com.example.crm_nexora.ui.theme.NexoraWarningChip
@@ -65,12 +66,9 @@ fun SampleAndGiftsItemCard(
                         fontSize = 13.sp,
                         lineHeight = 18.sp,
                     ),
-                    color = NexoraNavy,
+                    color = NexoraTextPrimary,
                     modifier = Modifier.fillMaxWidth(),
                 )
-                if (item.type == SampleAndGiftsItemType.Sample && item.isLowStock) {
-                    LowStockChip()
-                }
                 ReceivedDispatchedRow(
                     received = item.received,
                     dispatched = item.dispatched,
@@ -129,24 +127,6 @@ private fun ReceivedDispatchedRow(
     }
 }
 
-@Composable
-private fun LowStockChip(modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .background(NexoraWarningChip, RoundedCornerShape(999.dp))
-            .padding(horizontal = 9.dp, vertical = 3.dp),
-    ) {
-        NexoraText(
-            text = stringResource(R.string.sample_and_gifts_low_stock),
-            style = MaterialTheme.typography.labelSmall.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 9.sp,
-                lineHeight = 13.sp,
-            ),
-            color = NexoraWarningDeep,
-        )
-    }
-}
 
 @Composable
 private fun GiftPiecesPill(

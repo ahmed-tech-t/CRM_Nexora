@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.crm_nexora.navigation.AppRoute
+import com.example.crm_nexora.navigation.Graph
 import com.example.crm_nexora.ui.screens.datacenter.main.DataCenterScreen
 import com.example.crm_nexora.ui.screens.main.MainShellScreen
 import com.example.crm_nexora.ui.screens.unplannedvisit.main.UnplannedVisitScreen
@@ -17,15 +18,16 @@ import com.example.crm_nexora.ui.screens.unplannedvisit.main.UnplannedVisitScree
 fun AppNavGraph(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
+    startDestination: Graph,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
 
     NavHost(
         navController = navController,
-        startDestination = AppRoute.Main,
+        startDestination = startDestination,
         modifier = modifier,
     ) {
-        composable<AppRoute.Main> {
+        composable<Graph.Main> {
             MainShellScreen(
                 snackbarHostState = snackbarHostState,
                 onNavigate = { event -> navController.navigate(event.destination) },

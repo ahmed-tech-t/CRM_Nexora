@@ -93,7 +93,7 @@ internal fun VisitDurationChip(label: String, modifier: Modifier = Modifier) {
         NexoraText(
             text = label,
             style = MaterialTheme.typography.labelSmall.copy(
-                fontWeight = FontWeight.ExtraBold,
+                fontWeight = FontWeight.W600,
                 fontSize = 12.sp,
                 lineHeight = 16.sp,
             ),

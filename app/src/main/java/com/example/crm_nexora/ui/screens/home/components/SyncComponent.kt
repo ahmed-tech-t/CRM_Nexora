@@ -63,7 +63,7 @@ fun SyncComponent(
                     model.pendingCount?.let { count ->
                         StatusBadge(
                             text = stringResource(R.string.pending_sync_format, count),
-                            tone = StatusTone.Neutral,
+                            tone = StatusTone.Success,
                         )
                     }
                     NexoraText(

@@ -6,7 +6,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.crm_nexora.MainActivity
+import com.example.crm_nexora.ui.root.MainActivity
 import com.example.crm_nexora.R
 import com.example.crm_nexora.ui.preview.HomeSamples
 import dagger.hilt.android.testing.HiltAndroidRule

@@ -42,39 +42,10 @@ fun HomeUi(
     state: HomeState,
     onEvent: (HomeEvents) -> Unit,
     modifier: Modifier = Modifier,
-    appVersion: String = stringResource(R.string.drawer_app_version_default),
+
 ) {
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
-
-    LaunchedEffect(state.isDrawerOpen) {
-        if (state.isDrawerOpen) {
-            drawerState.open()
-        } else if (drawerState.isOpen) {
-            drawerState.close()
-        }
-    }
-
-    LaunchedEffect(drawerState) {
-        snapshotFlow { drawerState.currentValue }
-            .distinctUntilChanged()
-            .filter { it == DrawerValue.Closed }
-            .collect { onEvent(HomeEvents.OnDrawerDismiss) }
-    }
-
-    ModalNavigationDrawer(
-        drawerState = drawerState,
-        gesturesEnabled = true,
-        drawerContent = {
-            NavDrawerSheet(
-                user = state.user,
-                appVersion = appVersion,
-                onItemClick = { onEvent(HomeEvents.OnDrawerItem(it)) },
-            )
-        },
-        modifier = modifier.fillMaxSize(),
-    ) {
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxSize()
                 .background(NexoraSurfaceMuted),
         ) {
@@ -140,7 +111,6 @@ fun HomeUi(
                 }
             }
         }
-    }
 }
 
 @Preview(showBackground = true, locale = "ar", heightDp = 900)

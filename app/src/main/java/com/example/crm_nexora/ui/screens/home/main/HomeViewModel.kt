@@ -33,13 +33,13 @@ class HomeViewModel @Inject constructor() : BaseViewModel() {
                 _state.update { it.copy(isDrawerOpen = false) }
                 when (event.item) {
                     NavDrawerItem.InfoCenter -> {
-                        sendUiEvent(UiEvent.Navigate(AppRoute.DataCenter))
+                        sendEvent(UiEvent.Navigate(AppRoute.DataCenter))
                     }
                     NavDrawerItem.Unplanned -> {
-                        sendUiEvent(UiEvent.Navigate(AppRoute.UnplannedVisit))
+                        sendEvent(UiEvent.Navigate(AppRoute.UnplannedVisit))
                     }
                     else -> {
-                        sendUiEvent(
+                        sendEvent(
                             UiEvent.ShowSnackBar(UiText.StringResource(R.string.placeholder_coming_soon)),
                         )
                     }

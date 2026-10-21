@@ -13,7 +13,7 @@ abstract class BaseViewModel : ViewModel() {
     private val _uiEvent = Channel<UiEvent>(Channel.BUFFERED)
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    protected fun sendUiEvent(event: UiEvent) {
+    protected fun sendEvent(event: UiEvent) {
         _uiEvent.trySend(event)
     }
 }

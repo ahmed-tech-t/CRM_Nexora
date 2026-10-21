@@ -194,7 +194,7 @@ fun AddVisitItemSheetContent(
         NexoraButton(
             text = stringResource(R.string.unplanned_sheet_save),
             onClick = { onConfirm(drafts.toList()) },
-            variant = NexoraButtonVariant.Navy,
+            variant = NexoraButtonVariant.Primary,
             enabled = drafts.isNotEmpty(),
         )
     }

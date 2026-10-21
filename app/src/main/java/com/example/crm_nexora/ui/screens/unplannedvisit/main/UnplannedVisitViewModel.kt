@@ -22,7 +22,7 @@ class UnplannedVisitViewModel @Inject constructor() : BaseViewModel() {
 
     fun onEvent(event: UnplannedVisitEvents) {
         when (event) {
-            UnplannedVisitEvents.Back -> sendUiEvent(UiEvent.NavigationUp)
+            UnplannedVisitEvents.Back -> sendEvent(UiEvent.NavigationUp)
             UnplannedVisitEvents.Next -> advanceStep()
             UnplannedVisitEvents.Previous -> retreatStep()
             is UnplannedVisitEvents.SelectCity -> updateVisit { it.copy(city = event.value) }
@@ -45,15 +45,15 @@ class UnplannedVisitViewModel @Inject constructor() : BaseViewModel() {
             is UnplannedVisitEvents.IncrementProduct -> adjustProduct(event.id, +1)
             is UnplannedVisitEvents.DecrementProduct -> adjustProduct(event.id, -1)
             UnplannedVisitEvents.EndVisit -> {
-                sendUiEvent(
+                sendEvent(
                     UiEvent.ShowSnackBar(UiText.StringResource(R.string.unplanned_visit_ended)),
                 )
-                sendUiEvent(UiEvent.NavigationUp)
+                sendEvent(UiEvent.NavigationUp)
             }
             UnplannedVisitEvents.VoiceNoteClick,
             UnplannedVisitEvents.AttachClick,
             UnplannedVisitEvents.ViewLocationClick -> {
-                sendUiEvent(
+                sendEvent(
                     UiEvent.ShowSnackBar(UiText.StringResource(R.string.placeholder_coming_soon)),
                 )
             }

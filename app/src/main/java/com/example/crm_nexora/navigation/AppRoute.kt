@@ -8,8 +8,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 sealed interface AppRoute {
-    @Serializable
-    data object Main : AppRoute
 
     @Serializable
     data object Home : AppRoute
@@ -32,6 +30,9 @@ sealed interface AppRoute {
     @Serializable
     data object UnplannedVisit : AppRoute
 
+    @Serializable
+    data object Login : AppRoute
+
     companion object {
         val tabRoutes: List<AppRoute> = listOf(Home, Statics, Visits, Plan, Custody)
 
@@ -50,7 +51,7 @@ sealed interface AppRoute {
             Visits -> "visits"
             Plan -> "plan"
             Custody -> "custody"
-            Main, DataCenter, UnplannedVisit -> "home"
+            else  -> "home"
         }
     }
 }
